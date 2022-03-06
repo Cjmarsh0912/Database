@@ -1,0 +1,38 @@
+/* database.html */
+#flex-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=text] {
+    margin-right: 15px;
+    padding: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: black;
+}
+
+h3 {
+    margin-right: 15px;
+    padding: 10px;
+}
+
+button {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#save-btn {
+    margin-left: 0;
+}
+
+.user-ID {
+    border: none;
+    width: 20px;
+}
+
+input[type=text]:focus {
+    outline: none;
+}

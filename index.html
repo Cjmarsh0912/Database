@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Database app that stores users that can be updated, removed, added, and saved">
+    <meta name="author" content="Christian Marsh">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/site.js"></script>
+
+</head>
+
+<body>
+    <main>
+        <form action="" id="user-form" style="overflow-x:auto;">
+            <table id="flex-table">
+                <tr id="-1">
+                    <th>
+                        <h3>
+                            ID
+                        </h3>
+                    </th>
+                    <th>
+                        <h3>
+                            First Name
+                        </h3>
+                    </th>
+                    <th>
+                        <h3>
+                            Last Name
+                        </h3>
+                    </th>
+                    <th>
+                        <h3>
+                            Username
+                        </h3>
+                    </th>
+                    <th>
+                        <h3>
+                            Email
+                        </h3>
+                    </th>
+                    <th>
+                        <h3>
+                            Password
+                        </h3>
+                    </th>
+                </tr>
+                <tr id="btn">
+                    <td></td>
+                    <td colspan="2">
+                        <button type='button' id='save-btn' disabled>Save</button>
+                        <button type='button' id='update-btn' disabled>Update</button>
+                        <button type='button' id='reset-btn'>Reset</button>
+                        <button type='button' id='add-btn'>Add New</button>
+                        <button type="button" id="delete-btn">Delete</button>
+                    </td>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </main>
+
+</body>
+
+</html>
