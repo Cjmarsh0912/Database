@@ -51,16 +51,16 @@ $(() => {
     data = JSON.parse(localStorage.getItem("users") || "[]");
 
     data.forEach(element => {
-      let ID = "<td><input name='ID' class='user-ID' readonly=true type='text' value='" + element.ID + "'> </td>";
-      let fname = "<td> <input name='fName' type='text' value='" + element.fName + "'> </td>";
-      let lname = "<td> <input name='lName' type='text' value='" + element.lName + "'> </td>";
-      let user = "<td> <input name='username' type='text' value='" + element.username + "'> </td>";
-      let email = "<td> <input name='email' type='text' value='" + element.email + "'> </td>";
-      let password = "<td> <input name='password' type='text' value='"
-        + element.password + "'> </td>";
+      let ID = "<input name='ID' class='user-ID' readonly=true type='text' value='" + element.ID + "'> ";
+      let fname = " <input name='fName' type='text' value='" + element.fName + "'> ";
+      let lname = " <input name='lName' type='text' value='" + element.lName + "'> ";
+      let user = " <input name='username' type='text' value='" + element.username + "'> ";
+      let email = " <input name='email' type='text' value='" + element.email + "'> ";
+      let password = " <input name='password' type='text' value='"
+        + element.password + "'> ";
 
-      $('#btn').before("<tr class='data' id='" + element.ID + "'>" + ID + fname + lname + user +
-        email + password + "</tr>");
+      $('.btn').before("<div class='data' id='" + element.ID + "'>" + ID + fname + lname + user +
+        email + password + "</div>");
       id++;
     }); // end forEach
     tempID = id;
@@ -84,14 +84,16 @@ $(() => {
       });
 
       $('input[name="delete"]:checked').each((i, element) => {
-        $(element).parents('tr').remove();
+        $(element).parents('div[class="data"]').remove();
         id--;
       });
 
       $('input[name="delete"]').remove();
 
+      $('.user-ID').show();
+
       $('input[name="ID"]').each((i, element) => {
-        let parent = $(element).parents('tr');
+        let parent = $(element).parents('div[class="data"]');
         parent[0].id = val;
         $(element).val(val);
         val++;
@@ -130,6 +132,8 @@ $(() => {
     if (del) {
       $('input[name="delete"]').remove();
 
+      $('.user-ID').show();
+
       $('#user-form').change(() => {
         $('#update-btn').prop('disabled', false);
       });
@@ -162,16 +166,16 @@ $(() => {
       password: " "
     });
 
-    let ID = "<td><input name='ID' class='user-ID' readonly=true type='text' value='" + tempID + "'> </td>";
-    let fname = "<td> <input name='fName' type='text'> </td>";
-    let lname = "<td> <input name='lName' type='text'> </td>";
-    let user = "<td> <input name='username' type='text'> </td>";
-    let email = "<td> <input name='email' type='text'> </td>";
-    let password = "<td> <input name='password' type='text'></td>";
+    let ID = "<input name='ID' class='user-ID' readonly=true type='text' value='" + tempID + "'> ";
+    let fname = " <input name='fName' type='text'> ";
+    let lname = " <input name='lName' type='text'> ";
+    let user = " <input name='username' type='text'> ";
+    let email = " <input name='email' type='text'> ";
+    let password = " <input name='password' type='text'>";
 
     rId = tempID - 1;
-    $('#' + rId).after("<tr class='data' id='" + tempID + "'>" + ID + fname + lname + user +
-      email + password + "</tr>");
+    $('#' + rId).after("<div class='data' id='" + tempID + "'>" + ID + fname + lname + user +
+      email + password + "</div>");
 
     $('#add-btn').prop('disabled', true);
     $('#delete-btn').prop('disabled', true);
@@ -184,6 +188,7 @@ $(() => {
     if (data.length < 1) { alert("nothing to delete"); return }
     alert('Select the rows you would like to delete');
     $('input').prop('readonly', true);
+    $('.user-ID').hide();
     $('.user-ID').before('<input name="delete" type="checkbox">');
     $('#delete-btn').prop('disabled', true);
     $('#add-btn').prop('disabled', true);

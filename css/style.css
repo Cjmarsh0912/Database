@@ -1,38 +1,47 @@
-/* database.html */
-#flex-table {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#user-form {
+    width: 1200px;
 }
 
-input[type=text] {
-    margin-right: 15px;
-    padding: 10px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-color: black;
+.grid-table{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1rem repeat(5, 1fr);
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 h3 {
-    margin-right: 15px;
-    padding: 10px;
+    font-size: 1.5rem;
 }
 
-button {
-    margin-top: 15px;
-    margin-left: 10px;
+.button {
+    grid-column: 1/7;
+    margin-top: 20px;
 }
 
-#save-btn {
-    margin-left: 0;
+.button *{
+    margin-right: 20px;
+    padding: .7rem;
+}
+
+.data {
+    grid-column: 1/7;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1rem repeat(5, 1fr);
+}
+
+input:not(.user-ID){
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: auto;
+}
+
+input:focus {
+    outline: none;
 }
 
 .user-ID {
     border: none;
-    width: 20px;
-}
-
-input[type=text]:focus {
-    outline: none;
 }
