@@ -59,7 +59,7 @@ $(() => {
       let password = " <input name='password' type='text' value='"
         + element.password + "'> ";
 
-      $('.btn').before("<div class='data' id='" + element.ID + "'>" + ID + fname + lname + user +
+      $('.button').before("<div class='data' id='" + element.ID + "'>" + ID + fname + lname + user +
         email + password + "</div>");
       id++;
     }); // end forEach
