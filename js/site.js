@@ -51,7 +51,7 @@ $(() => {
     data = JSON.parse(localStorage.getItem("users") || "[]");
 
     data.forEach(element => {
-      let ID = "<input name='ID' class='user-ID' readonly=true type='text' value='" + element.ID + "'> ";
+      let ID = "<p class='user-ID'>" + element.ID + "</p>";
       let fname = " <input name='fName' type='text' value='" + element.fName + "'> ";
       let lname = " <input name='lName' type='text' value='" + element.lName + "'> ";
       let user = " <input name='username' type='text' value='" + element.username + "'> ";
@@ -92,10 +92,10 @@ $(() => {
 
       $('.user-ID').show();
 
-      $('input[name="ID"]').each((i, element) => {
+      $('.user-ID').each((i, element) => {
         let parent = $(element).parents('div[class="data"]');
         parent[0].id = val;
-        $(element).val(val);
+        $(element).text(val);
         val++;
       });
 
@@ -166,7 +166,7 @@ $(() => {
       password: " "
     });
 
-    let ID = "<input name='ID' class='user-ID' readonly=true type='text' value='" + tempID + "'> ";
+    let ID = "<p class='user-ID'>" + tempID + "</p>";
     let fname = " <input name='fName' type='text'> ";
     let lname = " <input name='lName' type='text'> ";
     let user = " <input name='username' type='text'> ";
